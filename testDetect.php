@@ -5,15 +5,12 @@
 <body>
 <?php
 
-// Replace <Subscription Key> with a valid subscription key.
 $ocpApimSubscriptionKey = '9316f559557d4c71b63d2aa0bcb7ccee';
 $uriBase = 'https://westcentralus.api.cognitive.microsoft.com/face/v1.0';
+
 // $imageUrl = 'https://upload.wikimedia.org/wikipedia/commons/3/37/Dagestani_man_and_woman.jpg';
 $imageUrl = 'https://s3-us-west-2.amazonaws.com/uw-s3-cdn/wp-content/uploads/sites/6/2017/07/04140436/Obama-photos-750x229.jpg';
 
-
-// This sample uses the PHP5 HTTP_Request2 package
-// (http://pear.php.net/package/HTTP_Request2).
 require_once 'HTTP/Request2.php';
 
 $request = new Http_Request2($uriBase . '/detect');
