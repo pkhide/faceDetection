@@ -25,8 +25,9 @@ $parameters = array(
     // Request parameters
     'returnFaceId' => 'true',
     'returnFaceLandmarks' => 'false',
-    'returnFaceAttributes' => 'age,gender,headPose,smile,facialHair,glasses,' .
-        'emotion,hair,makeup,occlusion,accessories,blur,exposure,noise');
+    'returnFaceAttributes' => 'age,emotion,gender,smile');
+    // 'returnFaceAttributes' => 'age,gender,headPose,smile,facialHair,glasses,' .
+    //     'emotion,hair,makeup,occlusion,accessories,blur,exposure,noise');
 $url->setQueryVariables($parameters);
 
 $request->setMethod(HTTP_Request2::METHOD_POST);
