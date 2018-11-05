@@ -1,5 +1,5 @@
 <?
-namespace Face/Classes;
+namespace Face\Classes;
 
 class faceAPI{
     private $key;
@@ -15,10 +15,18 @@ class faceAPI{
         'headers' => [
             'Content-Type' => 'application/octet-stream',
             'Ocp-Apim-Subscription-Key' => $this-key,
-        ]])
+        ]]);
+        return json_decode($result->getBody()->getContents());
+    }
+
+    public function verify($faceID1, $faceID2){
+        $client= new \GuzzleHttp\Client();
+        $result= $client->request('POST', $this->url."/verify", ['json' => ['faceID1'
+        => $faceID1, "faceID2" => $faceID2], 'header' => [
+            'Content-Type' => 'application/json',
+            'Opc-Apim-Subscription-Key' => $this->key,
+        ]]);
         return json_decode($result->getBody()->getContents());
     }
 }
-
-
 ?>
