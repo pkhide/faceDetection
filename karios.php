@@ -18,6 +18,7 @@ curl_setopt($request, CURLOPT_HTTPHEADER, array(
     )
 );
 
+// test comment for git push
 curl_setopt($request, CURLOPT_RETURNTRANSFER, true);
 $response = curl_exec($request);
 
